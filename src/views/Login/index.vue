@@ -1,6 +1,7 @@
 <template>
   <div class="login">
-    登录页
+    <input v-validate="'required|phone'" name="phone">
+    <span v-show="errors.has('phone')">{{ errors.first('phone') }}</span>
   </div>
 </template>
 
@@ -20,10 +21,22 @@ export default {
   //监控data中的数据变化
   watch: {},
   //方法集合
-  methods: {},
+  methods: {
+    tap() {
+      console.log("tap!");
+    },
+    singleTap() {
+      console.log("long tap！");
+    },
+    pressMove: function(evt) {
+      console.log(evt.deltaX);
+      console.log(evt.deltaY);
+      console.log("onPressMove");
+    }
+  },
   //生命周期 - 创建完成（可以访问当前this实例）
   created() {
-    console.log('登录页')
+    console.log("登录页");
   },
   //生命周期 - 挂载完成（可以访问DOM元素）
   mounted() {},

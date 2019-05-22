@@ -23,7 +23,9 @@ export default {
     return {};
   },
   methods: {
-
+    test() {
+      console.log('tap！')
+    }
   },
 };
 </script>
